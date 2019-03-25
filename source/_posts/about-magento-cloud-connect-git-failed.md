@@ -1,5 +1,4 @@
 ---
-tags:
 title: 关于magento-cloud新项目无法pull代码的问题
 date: 2018-06-06 14:13:49
 categories:

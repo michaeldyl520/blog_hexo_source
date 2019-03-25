@@ -1,6 +1,6 @@
 ---
 title: magento2使用PayPal Payflow测试账号
-date: 2019-06-06 14:14:03
+date: 2018-06-06 14:14:03
 categories:
  - magento2
  - PayPal PayFlow

@@ -1,6 +1,6 @@
 ---
 title: ssh 必须使用账号密码登录方法
-date: 2019-06-20 14:14:16
+date: 2018-06-20 14:14:16
 categories:
  - ssh
 tags:
