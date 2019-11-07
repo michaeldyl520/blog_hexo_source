@@ -26,7 +26,7 @@ sudo apt-get install apache2 php5.6-fpm php7.0-fpm php7.1-fpm
 ```
 3. 打开apache `headers`和`proxy_fcgi`模块
 ```  shell
-sudo a2enmode headers proxy_fcgi
+sudo a2enmod headers proxy_fcgi
 ```
 > `apache`和`php-fpm`建议运行用户配置成当前登录账号，避免出现权限问题
 
