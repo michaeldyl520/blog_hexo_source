@@ -8,7 +8,7 @@ subtitle: 激流客
 description: Bring the crowds together, inspire unlimited
 keywords:
 author: michaeldyl520
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: indigo
+theme: maupassant
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
