@@ -5,21 +5,21 @@ changyan: ## Your changyan appid, e.g. cyrALsXc8
 changyan_conf: ## Your changyan conf, e.g. prod_d8a508c2825ab57eeb43e7c69bba0e8b
 gitment:
   enable: false ## If you want to use Gitment comment system please set the value to true.
-  owner: michaeldyl520 ## Your GitHub ID, e.g. username
-  repo: blog_hexo ## The repository to store your comments, make sure you're the repo's owner, e.g. imsun.github.io
-  client_id: bc0a56778da1a6031e03 ## GitHub client ID, e.g. 75752dafe7907a897619
-  client_secret: 80834698d6fae2e1a7ce52aca5f10dc48120a1a4 ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
+  owner:  ## Your GitHub ID, e.g. username
+  repo:  ## The repository to store your comments, make sure you're the repo's owner, e.g. imsun.github.io
+  client_id:  ## GitHub client ID, e.g. 75752dafe7907a897619
+  client_secret:  ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
 gitalk:
-  enable: true ## If you want to use Gitment comment system please set the value to true.
-  owner: michaeldyl520 ## Your GitHub ID, e.g. username
-  repo: blog_hexo ## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io
-  client_id: bc0a56778da1a6031e03 ## GitHub client ID, e.g. 75752dafe7907a897619
-  client_secret: 80834698d6fae2e1a7ce52aca5f10dc48120a1a4 ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
+  enable: false ## If you want to use Gitment comment system please set the value to true.
+  owner:  ## Your GitHub ID, e.g. username
+  repo:  ## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io
+  client_id:  ## GitHub client ID, e.g. 75752dafe7907a897619
+  client_secret:  ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
   admin:  ## Github repo owner and collaborators, only these guys can initialize github issues.
 valine: ## https://valine.js.org
-  enable: false ## If you want to use Valine comment system, please set the value to true.
-  appid: ## Your LeanCloud application App ID, e.g. pRBBL2JR4N7kLEGojrF0MsSs-gzGzoHsz
-  appkey: ## Your LeanCloud application App Key, e.g. tjczHpDfhjYDSYddzymYK1JJ
+  enable: true ## If you want to use Valine comment system, please set the value to true.
+  appid: 2IQzveP4smDYioOcXtl5RBsR-gzGzoHsz ## Your LeanCloud application App ID, e.g. pRBBL2JR4N7kLEGojrF0MsSs-gzGzoHsz
+  appkey: 1dfAHoKzqOHA46whL1PTkDGF ## Your LeanCloud application App Key, e.g. tjczHpDfhjYDSYddzymYK1JJ
   notify: false ## Mail notifier, see https://github.com/xCss/Valine/wiki/Valine-评论系统中的邮件提醒设置
   verify: true ## Validation code.
   placeholder: Just so so ## Comment box placeholders.
@@ -33,7 +33,7 @@ swiftype: ## Your swiftype_key, e.g. m7b11ZrsT8Me7gzApciT
 tinysou: ## Your tinysou_key, e.g. 4ac092ad8d749fdc6293
 self_search: true ## Use a jQuery-based local search engine, true/false.
 google_analytics: ## Your Google Analytics tracking id, e.g. UA-42425684-2
-baidu_analytics: ## Your Baidu Analytics tracking id, e.g. 8006843039519956000
+baidu_analytics: f7bacd72afe7c9ecf6b6e6b4a8595c2f ## Your Baidu Analytics tracking id, e.g. 8006843039519956000
 fancybox: true ## If you want to use fancybox please set the value to true.
 show_category_count: false ## If you want to show the count of categories in the sidebar widget please set the value to true.
 toc_number: true ## If you want to add list number to toc please set the value to true.
