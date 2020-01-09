@@ -10,3 +10,8 @@ categorys:
 ```shell
 docker rm `docker ps -a -q --filter 'status=exited'`
 ```
+
+# debian apparmor linux内核安全模块影响docker运行，本地操作系统可以直接移除此包
+```shell
+sudo apt-get purge apparmor
+```
