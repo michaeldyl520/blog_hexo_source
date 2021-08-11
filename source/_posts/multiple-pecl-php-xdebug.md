@@ -13,6 +13,7 @@ sudo update-alternatives --set phpize /usr/bin/phpize7.3
 sudo update-alternatives --set php-config /usr/bin/php-config7.3
 #安装xdebug 2.9.8
 sudo pecl -d php_suffix=7.3 install http://pecl.php.net/get/xdebug-2.9.8.tgz
+sudo pecl uninstall xdebug
 
 #设定默认php环境变量为7.4
 sudo update-alternatives --set php /usr/bin/php7.4
@@ -20,4 +21,5 @@ sudo update-alternatives --set phpize /usr/bin/phpize7.4
 sudo update-alternatives --set php-config /usr/bin/php-config7.4
 #安装xdebug 3.0.2
 sudo proxychains pecl -d php_suffix=7.4 install http://pecl.php.net/get/xdebug-3.0.2.tgz
+sudo pecl uninstall xdebug
 ```
