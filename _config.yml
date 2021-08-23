@@ -106,5 +106,5 @@ baidusitemap:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/michaeldyl520/blog_hexo.git
+  repo: git@michaeldyl520.github.com:michaeldyl520/blog_hexo.git
   branch: master
