@@ -76,7 +76,6 @@ https://www.nvidia.com/Download/index.aspx?lang=en-us
 
    **注意英文中出现“nvidia-xconfig”一定要选择No**
 
-
 10. 输入```reboot```重启电脑，安装完成
 
 参考视频
