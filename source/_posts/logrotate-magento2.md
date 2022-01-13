@@ -14,7 +14,7 @@ tags:
  2.sudo vim /etc/logrotate.d/magento2
  3.拷贝以下内容到/etc/logrotate.d/magento2
  ```
- /var/www/sddev/public_html/var/log/*.log {
+ /var/www/magento2/var/log/*.log {
         daily
         compress
         delaycompress
@@ -27,7 +27,7 @@ tags:
 4.测试
 ```shell
 #强制执行
-sudo logrotate -f /etc/logrotate.d/sddev
+sudo logrotate -f /etc/logrotate.d/magento2
 #调试模式
-sudo logrotate -f /etc/logrotate.d/sddev
+sudo logrotate -f /etc/logrotate.d/magento2
 ```
