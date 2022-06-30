@@ -13,4 +13,6 @@ select TABLE_SCHEMA,round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data f
 select round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA="xxxxxx";
 #统计数据表大小
 select table_name,round(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,2) as data from information_schema.tables where TABLE_SCHEMA="xxxxxx" GROUP BY table_name order by data desc;
+#批量修改域名
+UPDATE core_config_data SET value = replace (value,'xxx.xxx.com','xxx.xxx.local') WHERE value LIKE '%xxx.xxx.com%';
 ```
