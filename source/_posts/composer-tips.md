@@ -24,6 +24,14 @@ composer配置方法
                 "dist": {
                     "url": "https://github.com/stripe/stripe-magento2-releases/raw/master/stripe-magento2-3.2.8.tgz",
                     "type": "tar"
+                },
+                "autoload":{
+                    "files": [
+                        "code/StripeIntegration/Payments/registration.php"
+                    ],
+                    "psr-4": {
+                        "StripeIntegration\\Payments\\": "code/StripeIntegration/Payments/"
+                    }
                 }
             }
         }
