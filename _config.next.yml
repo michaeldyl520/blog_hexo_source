@@ -665,13 +665,16 @@ google_analytics:
   only_pageview: false
 
 # Baidu Analytics
-baidu_analytics: f7bacd72afe7c9ecf6b6e6b4a8595c2f
+baidu_analytics: 
 
 # Growingio Analytics
 growingio_analytics: # <project_id>
 
 # Cloudflare Web Analytics
 cloudflare_analytics:
+
+# 51la Analytics
+51la_analytics: 3GZdzbQGrDvdjET8
 
 # Show number of visitors of each article.
 # You can visit https://www.leancloud.cn to get AppID and AppKey.

@@ -1,0 +1,4 @@
+{%- if theme.51la_analytics %}
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"{{ theme.51la_analytics }}",ck:"{{ theme.51la_analytics }}",autoTrack:true})</script>
+{%- endif %}
