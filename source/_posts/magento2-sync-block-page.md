@@ -13,8 +13,8 @@ cms_block
 cms_block_store
 cms_page
 cms_page_store
-sequence_block
-sequence_page
+sequence_cms_block
+sequence_cms_page
 staging_update
 flag //其中的staging的值必须在staging_update中存在
 ```
