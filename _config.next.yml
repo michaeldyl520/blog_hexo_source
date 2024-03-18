@@ -859,7 +859,7 @@ vendors:
 
   # Font Awesome
   # For more information: https://fontawesome.com
-  fontawesome: https://use.fontawesome.com/releases/v5.15.4/css/all.css
+  fontawesome: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/5.15.4/css/all.min.css
   # Prism
   prism:
   prism_autoloader:
