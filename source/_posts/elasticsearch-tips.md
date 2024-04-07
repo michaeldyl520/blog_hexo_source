@@ -22,8 +22,8 @@ curl http://localhost:9200/_nodes/stats?pretty&human -s |grep heap_used
 ```shell
 docker cp elasticsearch7177:/usr/share/elasticsearch/config/jvm.options ~/
 cd ~
-sed -i 's/-Xms6g/-Xms2g/g' ~/jvm.options
-sed -i 's/-Xmx6g/-Xmx2g/g' ~/jvm.options
+sed -i 's/-Xms6g/-Xms1g/g' ~/jvm.options
+sed -i 's/-Xmx6g/-Xmx1g/g' ~/jvm.options
 docker cp ~/jvm.options elasticsearch7177:/usr/share/elasticsearch/config
 rm ~/jvm.options
 ```
