@@ -1,7 +1,9 @@
 ---
-title: magento2-unit-test
+title: magento2 单元测试
 date: 2024-03-29 18:42:45
 tags:
+ - magento2
+ - phpunit
 ---
 ```
 <?php
