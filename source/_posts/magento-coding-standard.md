@@ -16,12 +16,16 @@ vendor/bin/phpcs --config-set installed_paths vendor/magento/magento-coding-stan
 ## 自动对齐的问题
 高版本PhpStorm Function如果有多个变量并换行，会自动两边对齐属性，不符合代码规范，需要在`Settings>Editor>Code Style>PHP->Wrapping and Braces->Function declaration parameters`中去掉`Align when multiline`的勾选框且勾选`Keep ')' and '{' on one line`
 
-![自动对齐的问题](/images/强类型提示的问题.png)
+![自动对齐的问题](/images/修复自动对齐的问题.png)
 
 ## 强制限定类型的提示问题
 Magento2 PHP不需要做强制类型限定参照图去掉以下两个复选框。
 
 ![强制限定类型的提示问题](/images/强类型提示的问题.png)
+
+## 去掉js相等警告
+
+![去掉js相等警告](/images/去掉js相等警告.png)
 
 eslint 搭法
 
