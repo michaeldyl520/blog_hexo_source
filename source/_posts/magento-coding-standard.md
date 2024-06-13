@@ -27,10 +27,13 @@ Magento2 PHP不需要做强制类型限定参照图去掉以下两个复选框�
 
 ![去掉js相等警告](/images/去掉js相等警告.png)
 
-eslint 搭法
+## eslint 搭法
 
 ![eslint 搭法](/images/eslint-1.png)
 ![eslint 搭法](/images/eslint-2.png)
 
-phpcs搭法
-最新的vendor如果没有包含phpcs等检测工具，我们可以间接使用默认的2.4.5-p1中的phpcs进行项目的检测
+## phpcs搭法
+如果最新的vendor如果没有包含phpcs等检测工具，我们可以间接使用默认的2.4.5-p1中的phpcs进行项目的检测
+
+## 右键phpcs添加方法
+![右键phpcs设置方法.png](/images/右键phpcs设置方法.png)
