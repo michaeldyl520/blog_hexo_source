@@ -40,3 +40,25 @@ composer配置方法
 }
 ```
 然后终端中在项目目录下使用 `composer require stripe/module-payments:3.2.8` 安装。
+
+## 2.自定义文件夹方式安装的方法
+composer 配置方法
+```
+{
+    ......
+    "repositories": {
+        "0":{
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        },
+        "1": {
+            "type": "path",
+            "url": "app/vendor/*/*",
+            "options": {
+                "symlink": true
+            }
+        }
+    },
+    ......
+}
+```
