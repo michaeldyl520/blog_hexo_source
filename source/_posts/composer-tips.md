@@ -3,6 +3,7 @@ title: composer tips
 date: 2023-10-09 13:22:34
 tags:
  - composer
+ - composer repositories
 ---
 # Composer 小技巧
 ## 1. 自定义安装包的方法
