@@ -78,6 +78,7 @@ busuanzi: true ## If you want to use Busuanzi page views please set the value to
 baidu_analytics:
 google_analytics:
 gauges_analytics:
+youla_analytics: 3GZdzbQGrDvdjET8
 
 # MathJax support
 mathjax:
