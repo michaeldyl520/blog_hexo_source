@@ -60,6 +60,11 @@ composer 配置方法
             }
         }
     },
+    "config": {
+        ......
+        "preferred-install": "source", //告诉 Composer 优先使用源代码（包括本地存在的包）而不是下载压缩包。
+        ......
+    }
     ......
 }
 ```
