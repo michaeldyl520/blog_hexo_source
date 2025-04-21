@@ -7,10 +7,51 @@ url: 323.html
 id: 323
 categories:
   - LAMP技术中心
-date: 2015-03-30 11:16:25
+date: 2025-04-20 11:16:25
 ---
 
 1.nginx [http://nginx.org/en/docs/configure.html](http://nginx.org/en/docs/configure.html)
+
+```
+sudo apt update
+sudo apt-get install build-essential libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev libgd-dev libxml2 libxml2-dev uuid-dev
+
+cd ~
+wget https://nginx.org/download/nginx-1.26.3.tar.gz
+tar -zxvf nginx-1.26.3.tar.gz
+cd nginx-1.26.3
+./configure --prefix=/var/www/html --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --with-pcre  --lock-path=/var/lock/nginx.lock --pid-path=/var/run/nginx.pid --with-http_ssl_module --with-http_image_filter_module=dynamic --modules-path=/etc/nginx/modules --with-http_v2_module --with-stream=dynamic --with-http_addition_module --with-http_mp4_module
+sudo make -j 4
+sudo make install
+nginx -V
+```
+安装nginx service
+```
+sudo deepin-editor /lib/systemd/system/nginx.service
+```
+粘贴以下代码并保存
+```
+[Unit]
+Description=The NGINX HTTP and reverse proxy server
+After=syslog.target network-online.target remote-fs.target nss-lookup.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/nginx.pid
+ExecStartPre=/usr/sbin/nginx -t
+ExecStart=/usr/sbin/nginx
+ExecReload=/usr/sbin/nginx -s reload
+ExecStop=/bin/kill -s QUIT $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+```
+开启自启动
+```
+sudo systemctl enable nginx
+```
 
 2.php [http://php.net/manual/en/install.unix.nginx.php](http://php.net/manual/en/install.unix.nginx.php)
 
