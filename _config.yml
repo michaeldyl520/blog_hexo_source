@@ -6,7 +6,7 @@
 title: Jiliuke
 subtitle: 激流客
 description: Bring the crowds together, inspire unlimited
-keywords:
+keywords: Magento2, Magento, PHP, JavaScript, MySQL, Linux, Redis, Elasticsearch
 author: michaeldyl520
 language: zh-CN
 timezone:
@@ -43,7 +43,7 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''
@@ -135,3 +135,5 @@ feed:
   content:
     enabled: true
     truncate: 140
+theme_config:
+  busuanzi: false
