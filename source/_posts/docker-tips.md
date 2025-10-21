@@ -50,3 +50,9 @@ systemctl restart docker
 
 systemctl show --property=Environment docker
 ```
+
+可用的docker镜像加速器，配置到daemon.json中
+```
+"https://docker.m.daocloud.io",
+"https://docker.xuanyuan.me"
+```
