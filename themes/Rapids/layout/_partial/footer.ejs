@@ -1,0 +1,12 @@
+<footer class="site-foot">
+  <div class="wrap site-foot__inner">
+    <p class="site-foot__copy">© <%= date(Date.now(), 'YYYY') %> <%= config.title %></p>
+    <p class="site-foot__links">
+      <a href="<%= url_for('/atom.xml') %>"><%= __('menu.rss') %></a>
+      <span aria-hidden="true">·</span>
+      <a href="<%= url_for('/sitemap.xml') %>"><%= __('footer.sitemap') %></a>
+      <span aria-hidden="true">·</span>
+      <span><%= __('footer.hexo') %></span>
+    </p>
+  </div>
+</footer>

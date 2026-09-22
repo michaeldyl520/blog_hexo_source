@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="<%= config.language || 'zh-CN' %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%
+    var pageTitle = page.title ? page.title + ' | ' + config.title : config.title + (config.subtitle ? ' — ' + config.subtitle : '');
+    var pageDesc = page.description || page.excerpt || config.description || '';
+    pageDesc = strip_html(pageDesc).replace(/\s+/g, ' ').trim().slice(0, 160);
+  %>
+  <title><%= pageTitle %></title>
+  <meta name="description" content="<%= pageDesc %>">
+  <% if (config.keywords) { %><meta name="keywords" content="<%= config.keywords %>"><% } %>
+  <meta name="theme-color" content="#0B1824">
+  <link rel="canonical" href="<%= full_url_for(page.path) %>">
+  <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%= url_for('/atom.xml') %>">
+  <link rel="icon" href="<%= url_for('/favicon.svg') %>" type="image/svg+xml">
+  <link rel="alternate icon" href="<%= url_for('/favicon.ico') %>" sizes="any">
+  <link rel="apple-touch-icon" href="<%= url_for('/png/apple-touch-icon-180.png') %>">
+  <meta property="og:type" content="<%= is_post() ? 'article' : 'website' %>">
+  <meta property="og:title" content="<%= pageTitle %>">
+  <meta property="og:description" content="<%= pageDesc %>">
+  <meta property="og:url" content="<%= full_url_for(page.path) %>">
+  <meta property="og:site_name" content="<%= config.title %>">
+  <link rel="stylesheet" href="<%= url_for('/css/style.css') %>">
+</head>
+<body class="<%= is_home() ? 'is-home' : is_post() ? 'is-post' : is_archive() ? 'is-archive' : 'is-page' %>">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <%- partial('_partial/header') %>
+  <main id="main">
+    <%- body %>
+  </main>
+  <%- partial('_partial/footer') %>
+  <% if (theme.search && theme.search.enable) { %>
+    <%- partial('_partial/search') %>
+  <% } %>
+  <script>
+    window.__RAPIDS_I18N__ = {
+      copy: <%- JSON.stringify(__('post.copy')) %>,
+      copied: <%- JSON.stringify(__('post.copied')) %>
+    };
+  </script>
+  <script src="<%= url_for('/js/main.js') %>" defer></script>
+  <% if (theme.youla_analytics) { %>
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id:"<%= theme.youla_analytics %>",ck:"<%= theme.youla_analytics %>"})</script>
+  <% } %>
+  <% if (theme.baidu_analytics) { %>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?<%= theme.baidu_analytics %>";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  <% } %>
+</body>
+</html>

@@ -1,0 +1,33 @@
+# Rapids theme — 激流
+menu:
+  - home
+  - archives
+  - tags
+  - categories
+  - about
+  - rss
+
+excerpt:
+  length: 108
+
+reading:
+  cjk_per_minute: 400
+  en_per_minute: 180
+
+date_format: YYYY-MM-DD
+
+toc:
+  enable: true
+
+copyright:
+  enable: true
+  notice: 转载请注明出处
+
+search:
+  enable: true
+
+# integrations (site overrides via theme_config)
+busuanzi: false
+youla_analytics:
+baidu_analytics:
+gauges_analytics:

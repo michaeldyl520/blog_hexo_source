@@ -1,0 +1,9 @@
+<%
+  var headingToc = toc(page.content, { list_number: false, max_depth: 4 });
+%>
+<% if (theme.toc && theme.toc.enable && headingToc) { %>
+  <aside class="toc" aria-label="<%= __('post.toc') %>">
+    <p class="toc__label"><%= __('post.toc') %></p>
+    <%- headingToc %>
+  </aside>
+<% } %>

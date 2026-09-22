@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: BlueLake
+theme: Rapids
 
 #sitemap
 sitemap:
@@ -137,3 +137,4 @@ feed:
     truncate: 140
 theme_config:
   busuanzi: false
+  youla_analytics: 3GZdzbQGrDvdjET8

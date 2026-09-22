@@ -1,0 +1,24 @@
+<section class="masthead">
+  <div class="wrap masthead__inner">
+    <p class="masthead__eyebrow">JILIUKE.COM · 技术札记 · EST. 2014</p>
+    <h1 class="masthead__title"><%= config.subtitle || config.title %></h1>
+    <p class="masthead__desc"><%= config.description %></p>
+    <p class="masthead__keys"><%= config.keywords %></p>
+  </div>
+  <div class="masthead__current" aria-hidden="true">
+    <%- partial('_partial/current') %>
+  </div>
+</section>
+
+<section class="stream wrap" aria-label="文章列表">
+  <% if (page.posts && page.posts.length) { %>
+    <div class="stream__list">
+      <% page.posts.each(function(post) { %>
+        <%- partial('_partial/row', { post: post }) %>
+      <% }) %>
+    </div>
+    <%- partial('_partial/pagination') %>
+  <% } else { %>
+    <p class="stream__empty"><%= __('list.empty') %></p>
+  <% } %>
+</section>

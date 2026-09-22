@@ -1,0 +1,43 @@
+<% if (page.type === 'categories') { %>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="page-head__eyebrow">INDEX · <%= site.categories.length %></p>
+      <h1 class="page-head__title"><%= page.title || __('menu.categories') %></h1>
+    </div>
+  </section>
+  <section class="term-list wrap">
+    <% if (site.categories.length) { %>
+      <ul class="term-list__grid">
+        <% site.categories.sort('name').each(function(cat) { %>
+          <li>
+            <a href="<%= url_for(cat.path) %>">
+              <span class="term-list__name"><%= cat.name %></span>
+              <span class="term-list__count"><%= String(cat.length).padStart(2, '0') %></span>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p class="stream__empty"><%= __('list.empty') %></p>
+    <% } %>
+  </section>
+<% } else { %>
+  <%
+    var isAbout = page.path && page.path.indexOf('about/') === 0;
+    var headTitle = isAbout ? __('menu.about') : (page.title || config.title);
+    var headEyebrow = isAbout ? __('nav_en.about') : (String(page.title || 'PAGE').toUpperCase());
+  %>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="page-head__eyebrow"><%= headEyebrow %></p>
+      <h1 class="page-head__title"><%= headTitle %></h1>
+    </div>
+  </section>
+  <section class="page-body wrap">
+    <div class="content">
+      <% if (page.content) { %>
+        <%- page.content %>
+      <% } %>
+    </div>
+  </section>
+<% } %>

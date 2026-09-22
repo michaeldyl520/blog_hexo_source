@@ -1,0 +1,47 @@
+menu:
+  home: Home
+  archives: Archives
+  tags: Tags
+  categories: Categories
+  about: About
+  rss: RSS
+
+nav_en:
+  home: HOME
+  archives: ARCHIVE
+  tags: TAGS
+  categories: INDEX
+  about: ABOUT
+  rss: RSS
+
+search:
+  open: Search
+  placeholder: Search posts…
+  hint: Type a keyword to search posts
+  empty: No matching posts
+  error: Failed to load the search index
+  count: "{n} posts"
+
+post:
+  reading: min read
+  read_full: Read full post
+  prev: Previous
+  next: Next
+  tags: Tags
+  toc: Contents
+  copyright: Copyright
+  copyright_link: Canonical link
+  copy: Copy
+  copied: Copied
+
+list:
+  empty: No posts yet
+  page: Page
+
+pager:
+  prev: Prev
+  next: Next
+
+footer:
+  sitemap: Sitemap
+  hexo: Powered by Hexo

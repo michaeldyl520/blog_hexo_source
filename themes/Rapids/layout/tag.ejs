@@ -1,0 +1,18 @@
+<section class="page-head">
+  <div class="wrap">
+    <p class="page-head__eyebrow">TAG · <%= page.tag %></p>
+    <h1 class="page-head__title">#<%= page.tag %></h1>
+  </div>
+</section>
+<section class="stream wrap" aria-label="标签文章">
+  <% if (page.posts && page.posts.length) { %>
+    <div class="stream__list">
+      <% page.posts.each(function(post) { %>
+        <%- partial('_partial/row', { post: post }) %>
+      <% }) %>
+    </div>
+    <%- partial('_partial/pagination') %>
+  <% } else { %>
+    <p class="stream__empty"><%= __('list.empty') %></p>
+  <% } %>
+</section>

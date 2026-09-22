@@ -1,0 +1,22 @@
+<section class="page-head">
+  <div class="wrap">
+    <p class="page-head__eyebrow">TAGS · <%= site.tags.length %></p>
+    <h1 class="page-head__title"><%= __('menu.tags') %></h1>
+  </div>
+</section>
+<section class="term-list wrap">
+  <% if (site.tags.length) { %>
+    <ul class="term-list__grid">
+      <% site.tags.sort('-length').each(function(tag) { %>
+        <li>
+          <a href="<%= url_for(tag.path) %>">
+            <span class="term-list__name"><%= tag.name %></span>
+            <span class="term-list__count"><%= String(tag.length).padStart(2, '0') %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p class="stream__empty"><%= __('list.empty') %></p>
+  <% } %>
+</section>

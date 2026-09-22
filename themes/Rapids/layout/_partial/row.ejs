@@ -1,0 +1,19 @@
+<article class="row">
+  <div class="row__meta">
+    <time class="row__date" datetime="<%= date_xml(post.date) %>"><%= date(post.date, theme.date_format) %></time>
+    <p class="row__reading">
+      <span class="row__minutes"><%= readingMinutes(post) %> <%= __('post.reading') %></span>
+      <span class="flow" aria-hidden="true"><span class="flow__bar" style="--flow-w: <%= flowWidth(readingMinutes(post)) %>%"></span></span>
+    </p>
+  </div>
+  <div class="row__main">
+    <h2 class="row__title"><a href="<%= url_for(post.path) %>"><%= post.title || __('list.empty') %></a></h2>
+    <p class="row__excerpt"><%= plainExcerpt(post) %></p>
+    <a class="row__more" href="<%= url_for(post.path) %>"><%= __('post.read_full') %><span aria-hidden="true"> →</span></a>
+  </div>
+  <ul class="row__tags">
+    <% (post.tags ? post.tags.toArray() : []).slice(0, 3).forEach(function(tag) { %>
+      <li><a href="<%= url_for(tag.path) %>"><%= tag.name %></a></li>
+    <% }) %>
+  </ul>
+</article>

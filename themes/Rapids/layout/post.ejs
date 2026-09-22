@@ -1,0 +1,58 @@
+<article class="post wrap">
+  <header class="post__header">
+    <p class="post__eyebrow">
+      <% if (page.categories && page.categories.length) { %>
+        <a class="post__cat" href="<%= url_for(page.categories.toArray()[0].path) %>"><%= page.categories.toArray()[0].name %></a>
+        <span aria-hidden="true">·</span>
+      <% } %>
+      <time datetime="<%= date_xml(page.date) %>"><%= date(page.date, theme.date_format) %></time>
+      <span aria-hidden="true">·</span>
+      <span><%= readingMinutes(page) %> <%= __('post.reading') %></span>
+    </p>
+    <h1 class="post__title"><%= page.title %></h1>
+    <div class="post__current" aria-hidden="true">
+      <%- partial('_partial/current') %>
+    </div>
+  </header>
+
+  <div class="post__layout">
+    <div class="post__body content" id="post-body">
+      <%- page.content %>
+
+      <% if (page.tags && page.tags.length) { %>
+        <ul class="post__tags">
+          <% page.tags.each(function(tag) { %>
+            <li><a href="<%= url_for(tag.path) %>">#<%= tag.name %></a></li>
+          <% }) %>
+        </ul>
+      <% } %>
+
+      <% if (theme.copyright && theme.copyright.enable) { %>
+        <div class="post__copyright">
+          <p><%= theme.copyright.notice %>：<a href="<%= full_url_for(page.path) %>"><%= full_url_for(page.path) %></a></p>
+        </div>
+      <% } %>
+    </div>
+
+    <%- partial('_partial/toc') %>
+  </div>
+
+  <nav class="post__nav" aria-label="文章导航">
+    <% if (page.prev) { %>
+      <a class="post__nav-item post__nav-prev" href="<%= url_for(page.prev.path) %>" rel="prev">
+        <span class="post__nav-label"><span aria-hidden="true">‹</span> <%= __('post.prev') %></span>
+        <span class="post__nav-title"><%= page.prev.title %></span>
+      </a>
+    <% } else { %>
+      <span class="post__nav-item is-disabled"></span>
+    <% } %>
+    <% if (page.next) { %>
+      <a class="post__nav-item post__nav-next" href="<%= url_for(page.next.path) %>" rel="next">
+        <span class="post__nav-label"><%= __('post.next') %> <span aria-hidden="true">›</span></span>
+        <span class="post__nav-title"><%= page.next.title %></span>
+      </a>
+    <% } else { %>
+      <span class="post__nav-item is-disabled"></span>
+    <% } %>
+  </nav>
+</article>

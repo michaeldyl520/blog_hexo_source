@@ -1,0 +1,38 @@
+<% if (page.total > 1) { %>
+<nav class="pager" aria-label="分页">
+  <% if (page.prev) { %>
+    <a class="pager__edge pager__prev" href="<%= url_for(page.prev_link) %>" rel="prev">‹ <%= __('pager.prev') %></a>
+  <% } else { %>
+    <span class="pager__edge pager__prev is-disabled" aria-disabled="true">‹ <%= __('pager.prev') %></span>
+  <% } %>
+
+  <ol class="pager__list">
+    <%
+      var window = 2;
+      var pages = [];
+      for (var i = 1; i <= page.total; i++) {
+        if (i === 1 || i === page.total || (i >= page.current - window && i <= page.current + window)) {
+          pages.push(i);
+        } else if (pages[pages.length - 1] !== '…') {
+          pages.push('…');
+        }
+      }
+    %>
+    <% pages.forEach(function(p) { %>
+      <% if (p === '…') { %>
+        <li class="pager__gap" aria-hidden="true">…</li>
+      <% } else if (p === page.current) { %>
+        <li><span class="pager__num is-current" aria-current="page"><%= String(p).padStart(2, '0') %></span></li>
+      <% } else { %>
+        <li><a class="pager__num" href="<%= url_for(p === 1 ? '/' : 'page/' + p + '/') %>"><%= String(p).padStart(2, '0') %></a></li>
+      <% } %>
+    <% }) %>
+  </ol>
+
+  <% if (page.next) { %>
+    <a class="pager__edge pager__next" href="<%= url_for(page.next_link) %>" rel="next"><%= __('pager.next') %> ›</a>
+  <% } else { %>
+    <span class="pager__edge pager__next is-disabled" aria-disabled="true"><%= __('pager.next') %> ›</span>
+  <% } %>
+</nav>
+<% } %>

@@ -1,0 +1,35 @@
+<section class="page-head">
+  <div class="wrap">
+    <p class="page-head__eyebrow">ARCHIVE · <%= page.total || 0 %> / <%= site.posts.length %></p>
+    <h1 class="page-head__title"><%= __('menu.archives') %></h1>
+  </div>
+</section>
+<section class="stream wrap" aria-label="归档">
+  <%
+    var lastYear = null;
+    var groups = [];
+    page.posts.each(function(post) {
+      var y = post.date.year();
+      if (y !== lastYear) {
+        groups.push({ year: y, posts: [] });
+        lastYear = y;
+      }
+      groups[groups.length - 1].posts.push(post);
+    });
+  %>
+  <% if (groups.length) { %>
+    <% groups.forEach(function(group) { %>
+      <section class="year-group">
+        <h2 class="year-group__label"><%= group.year %></h2>
+        <div class="year-group__list">
+          <% group.posts.forEach(function(post) { %>
+            <%- partial('_partial/row', { post: post }) %>
+          <% }) %>
+        </div>
+      </section>
+    <% }) %>
+    <%- partial('_partial/pagination') %>
+  <% } else { %>
+    <p class="stream__empty"><%= __('list.empty') %></p>
+  <% } %>
+</section>
