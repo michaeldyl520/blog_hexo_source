@@ -25,6 +25,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scrollbar-gutter: stable;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -171,14 +172,16 @@ img { max-width: 100%; height: auto; }
 
 .nav__item.is-active a { color: var(--current); }
 
-.nav__item.is-active a::after {
+.nav__item a::after {
   content: "";
   width: 4px;
   height: 4px;
   margin-top: 2px;
   border-radius: 50%;
-  background: var(--signal);
+  background: transparent;
 }
+
+.nav__item.is-active a::after { background: var(--signal); }
 
 .site-head__tools {
   display: flex;

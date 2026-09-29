@@ -7,7 +7,7 @@
     <nav class="nav" id="site-nav" aria-label="主导航">
       <ul class="nav__list">
         <% theme.menu.forEach(function(item) { %>
-          <li class="nav__item<%= (item === 'home' && is_home()) || (item === 'archives' && is_archive()) || (item === 'tags' && page.type === 'tags') || (item === 'categories' && page.type === 'categories') || (item === 'about' && page.path && page.path.indexOf('about/') === 0) ? ' is-active' : '' %>">
+          <li class="nav__item<%= (item === 'home' && is_home()) || (item === 'archives' && is_archive() && !page.tag && !page.category) || (item === 'tags' && (page.type === 'tags' || page.tag)) || (item === 'categories' && (page.type === 'categories' || page.category)) || (item === 'about' && page.path && page.path.indexOf('about/') === 0) ? ' is-active' : '' %>">
             <% if (item === 'rss') { %>
               <a href="<%= url_for('/atom.xml') %>">
                 <span class="nav__zh"><%= __('menu.' + item) %></span>
